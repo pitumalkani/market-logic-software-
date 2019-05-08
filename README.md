@@ -28,7 +28,7 @@ Following are the steps to execute the project.
 
 Here is the sequence diagram for current rest-api flow:
 
-![Sequence Diagram](images/sequence-diagram.JPG)
+![Sequence Diagram](images/sequence-diagram.jpg)
 
 Future enhancements which can be done:
 1. Relation between questionnaire with that of survey (As shown in figure a)
