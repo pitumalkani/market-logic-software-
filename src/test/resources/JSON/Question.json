@@ -1,0 +1,21 @@
+{
+    "question": "What age group likes magii?",
+    "answers": [
+        {
+            "option": "Teens",
+            "percentage": 0
+        },
+        {
+            "option": "Kids",
+            "percentage": 0
+        },
+        {
+            "option": "All",
+            "percentage": 0
+        },
+        {
+            "option": "Adults",
+            "percentage": 0
+        }
+    ]
+}

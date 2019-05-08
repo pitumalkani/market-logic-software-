@@ -8,7 +8,14 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * Instantiates a new question response DTO.
+ */
 @Data
+
+/* (non-Javadoc)
+ * @see com.marketlogicsoftware.entity.QuestionRequestDTO#hashCode()
+ */
 @EqualsAndHashCode(callSuper=true)
 public class QuestionResponseDTO extends QuestionRequestDTO {
 

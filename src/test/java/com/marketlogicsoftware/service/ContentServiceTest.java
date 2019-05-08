@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.ws.rs.BadRequestException;
+import javax.ws.rs.NotFoundException;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -25,7 +26,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.marketlogicsoftware.entity.Answer;
 import com.marketlogicsoftware.entity.QuestionRequestDTO;
 import com.marketlogicsoftware.entity.QuestionResponseDTO;
-import com.marketlogicsoftware.exception.PollingBackendException;
 
 @SuppressWarnings ( "deprecation" )
 @RunWith ( MockitoJUnitRunner.class )
@@ -42,7 +42,7 @@ public class ContentServiceTest {
 
     private static final String FILE_LIST_OF_QUESTIONS = "ListOfQuestions.json";
 
-    private static final String SURVEY_CONTENT = "DuplicateQuestion.json";
+    private static final String SURVEY_CONTENT = "SurveyResponse.json";
 
     private List<QuestionRequestDTO> listOfQuestions;
 
@@ -83,18 +83,18 @@ public class ContentServiceTest {
     }
 
     @Test
-    public void testGetById() throws PollingBackendException {
+    public void testGetById()  {
         QuestionResponseDTO dto = contentService.add( listOfQuestions.get( 0 ) );
         Assert.assertNotNull( contentService.getQuestionById( dto.getId() ) );
     }
 
-    @Test ( expected = PollingBackendException.class )
-    public void testGetByIdShouldThrowExcpetion() throws PollingBackendException {
+    @Test ( expected = NotFoundException.class )
+    public void testGetByIdShouldThrowExcpetion()  {
         contentService.getQuestionById( UUID.randomUUID() );
     }
 
     @Test
-    public void testUpdate() throws PollingBackendException {
+    public void testUpdate()  {
         Answer answer = new Answer();
         List<Answer> answerList = new ArrayList<>();
         answer.setOption( "Testing" );
@@ -104,13 +104,13 @@ public class ContentServiceTest {
     }
 
     @Test
-    public void testUpdateQuestion() throws PollingBackendException {
+    public void testUpdateQuestion()  {
         QuestionResponseDTO dto = contentService.add( listOfQuestions.get( 0 ) );
         Assert.assertNotNull( contentService.update( dto.getId(), new QuestionResponseDTO() ) );
     }
 
-    @Test ( expected = PollingBackendException.class )
-    public void testUpdateShouldThrowExcpetion() throws PollingBackendException {
+    @Test ( expected = NotFoundException.class )
+    public void testUpdateShouldThrowExcpetion()  {
         listOfQuestions.clear();
         contentService.update( UUID.randomUUID(), new QuestionResponseDTO() );
     }

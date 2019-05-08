@@ -20,7 +20,6 @@ import com.marketlogicsoftware.entity.Answer;
 import com.marketlogicsoftware.entity.QuestionDTO;
 import com.marketlogicsoftware.entity.QuestionRequestDTO;
 import com.marketlogicsoftware.entity.QuestionResponseDTO;
-import com.marketlogicsoftware.exception.PollingBackendException;
 import com.marketlogicsoftware.util.Util;
 
 /**
@@ -42,6 +41,7 @@ public class ContentService {
     /** The Constant HUNDRED. */
     private static final float HUNDRED = 100.0f;
 
+    /** The Constant LOGGER. */
     private final static Logger LOGGER = LoggerFactory.getLogger( ContentService.class );
 
     /**
@@ -114,15 +114,14 @@ public class ContentService {
      *
      * @param id the id
      * @return the question by id
-     * @throws PollingBackendException the polling backend exception
      */
-    public QuestionResponseDTO getQuestionById( UUID id ) throws PollingBackendException {
+    public QuestionResponseDTO getQuestionById( UUID id ) {
         LOGGER.debug( "Get question by id" );
         if ( mapOfQuestions.containsKey( id ) ) {
             return mapOfQuestions.get( id );
         } else {
             LOGGER.debug( Util.INVALID_ID + " {} ", id );
-            throw new PollingBackendException( Util.INVALID_ID );
+            throw new NotFoundException( Util.INVALID_ID );
         }
     }
 
@@ -132,15 +131,14 @@ public class ContentService {
      * @param id the id
      * @param questionDto the model dto
      * @return the question response DTO
-     * @throws PollingBackendException
      */
-    public QuestionResponseDTO update( UUID id, QuestionResponseDTO questionDto ) throws PollingBackendException {
+    public QuestionResponseDTO update( UUID id, QuestionResponseDTO questionDto ) {
         LOGGER.debug( "Updating question" );
         if ( mapOfQuestions.containsKey( id ) ) {
             mapOfQuestions.put( id, questionDto );
         } else {
             LOGGER.debug( Util.INVALID_ID + " {} ", id );
-            throw new PollingBackendException( Util.INVALID_ID );
+            throw new NotFoundException( Util.INVALID_ID );
         }
         return questionDto;
     }
@@ -149,15 +147,14 @@ public class ContentService {
      * Delete.
      *
      * @param id the id
-     * @throws PollingBackendException
      */
-    public void delete( UUID id ) throws PollingBackendException {
+    public void delete( UUID id ) {
         LOGGER.debug( "Deleting question" );
         if ( mapOfQuestions.containsKey( id ) ) {
             mapOfQuestions.remove( id );
         } else {
             LOGGER.debug( Util.INVALID_ID + " {} ", id );
-            throw new PollingBackendException( Util.INVALID_ID );
+            throw new NotFoundException( Util.INVALID_ID );
         }
     }
 
@@ -249,6 +246,11 @@ public class ContentService {
         return questionDto;
     }
 
+    /**
+     * Gets the list of questions.
+     *
+     * @return the list of questions
+     */
     private List<QuestionResponseDTO> getListOfQuestions() {
         return mapOfQuestions.values().stream().collect( Collectors.toList() );
     }
