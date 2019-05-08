@@ -1,0 +1,55 @@
+[
+    {
+        "question": "How do you perceive Maggi products??",
+        "answers": [
+            {
+                "option": "Good for health."
+              
+            },
+            {
+                "option": "Sauces"
+              
+            }
+        ],
+        "id": "288e87d6-3f33-460f-b093-16c14c5a0808"
+    },
+    {
+        "question": "which product of Maggi do you prefer most?",
+        "answers": [
+            {
+                "option": "Noodles"
+              
+            },
+            {
+                "option": "Soups"
+              
+            }
+        ],
+        "id": "d9b7f9d0-be3c-4ef0-9f1d-66adfaa24a51"
+    },
+    {
+        "question": "Are you aware of Maggi?",
+        "answers": [
+          
+            {
+                "option": "Yes"
+              
+            }
+        ],
+        "id": "5247f118-9ebd-4319-8f76-6db4fba516d5"
+    },
+    {
+        "question": "Why do you prefer it?",
+        "answers": [
+            {
+                "option": "Price"
+              
+            },
+            {
+                "option": "Flavours"
+              
+            }
+        ],
+        "id": "2b73cf08-79a0-4dd0-9fdb-042b18013383"
+    }
+]

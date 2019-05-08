@@ -1,0 +1,44 @@
+
+[
+
+
+{
+"question":"Are you aware of Maggi?",
+
+"answers":[
+	{"option":"Yes"},
+	{"option":"No"}
+]
+},
+{
+"question":"which product of Maggi do you prefer most?",
+
+"answers":[
+	{"option":"Noodles"},
+	{"option":"Price"},
+	{"option":"Taste"},
+	{"option":"Brand Image"}
+]
+},
+{
+"question":"Why do you prefer it?",
+
+"answers":[
+	{"option":"Flavours"},
+	{"option":"Sauces"},
+	{"option":"Soups"},
+	{"option":"Pazzta"}
+]
+},
+{
+"question":"How do you perceive Maggi products??",
+
+"answers":[
+	{"option":"Good for health."},
+	{"option":"Sauces"},
+	{"option":"Junk food"},
+	{"option":"Tasty / Fun eating"}
+]
+}
+
+]
