@@ -1,0 +1,292 @@
+{
+	"id": "569d12ee-e828-43f0-a040-1405881f558d",
+	"name": "logicsoftware",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"d104b810-0939-46d0-9409-7c1f63cabded",
+		"6bf6bef5-a583-4d5c-b298-5ea2b78c109f",
+		"d8f584f1-5bdd-44f2-8163-209c0639bf6c"
+	],
+	"folders": [
+		{
+			"id": "d8f584f1-5bdd-44f2-8163-209c0639bf6c",
+			"name": "answer-collection",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "569d12ee-e828-43f0-a040-1405881f558d",
+			"folder": null,
+			"order": [
+				"8256b172-498e-44b5-a174-bf1292d127b7"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"name": "question-collection",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "569d12ee-e828-43f0-a040-1405881f558d",
+			"folder": null,
+			"order": [
+				"d87f42b0-c7ee-4c8e-b036-9af1dd093c79",
+				"90c83421-3a54-4709-976b-baebe8cd0d1b",
+				"525b6742-32c9-457a-b4d7-59a5a6c09384",
+				"c6c2e891-d400-4d90-a09d-04a712d776a6",
+				"cc46de5b-4a37-40d9-8b2b-8bda4cd74a47",
+				"8c5ebcca-5aa3-4a13-a3b3-c13ec0804440"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "6bf6bef5-a583-4d5c-b298-5ea2b78c109f",
+			"name": "survey-collection",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "569d12ee-e828-43f0-a040-1405881f558d",
+			"folder": null,
+			"order": [
+				"84d1b4a7-8697-47c5-a3dc-298230b8b6c4",
+				"368e51f7-08a1-4608-9772-44818952059e"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "368e51f7-08a1-4608-9772-44818952059e",
+			"name": "/survey",
+			"url": "http://localhost:8080/survey",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "6bf6bef5-a583-4d5c-b298-5ea2b78c109f",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "525b6742-32c9-457a-b4d7-59a5a6c09384",
+			"name": "/question",
+			"url": "http://localhost:8080/question",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8256b172-498e-44b5-a174-bf1292d127b7",
+			"name": "/question/{id}/List<answers>",
+			"url": "http://localhost:8080/question/b864e701-786f-4bd8-8b23-8e68e5ffcc65/answer",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "d8f584f1-5bdd-44f2-8163-209c0639bf6c",
+			"rawModeData": " [\n        {\n            \"option\": \"Adults\",\n            \"percentage\": 0\n        },\n        {\n            \"option\": \"All\",\n            \"percentage\": 0\n        }\n    ]\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "84d1b4a7-8697-47c5-a3dc-298230b8b6c4",
+			"name": "/survey",
+			"url": "http://localhost:8080/survey",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "6bf6bef5-a583-4d5c-b298-5ea2b78c109f",
+			"rawModeData": "[\r\n    {\r\n        \"question\": \"What age group likes magii?\",\r\n        \"answers\": [\r\n            {\r\n                \"option\": \"Teens\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Kids\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"All\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Adults\"\r\n              \r\n            }\r\n        ],\r\n        \"id\": \"c7a5fa9a-b7df-410d-88b8-8473d2236fb2\"\r\n    },\r\n    {\r\n        \"question\": \"Are you aware of Maggi?\",\r\n        \"answers\": [\r\n            {\r\n                \"option\": \"No\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Yes\"\r\n              \r\n            }\r\n        ],\r\n        \"id\": \"445fa916-1401-4bd8-859b-06f242add54e\"\r\n    },\r\n    {\r\n        \"question\": \"Why do you prefer it?\",\r\n        \"answers\": [\r\n            {\r\n                \"option\": \"Price\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Flavours\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Brand Image\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Taste\"\r\n              \r\n            }\r\n        ],\r\n        \"id\": \"f35d33f2-083a-4b22-8160-847eeaf815ca\"\r\n    },\r\n    {\r\n        \"question\": \"which product of Maggi do you prefer most?\",\r\n        \"answers\": [\r\n            {\r\n                \"option\": \"Noodles\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Soups\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Pazzta\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Sauces\"\r\n              \r\n            }\r\n        ],\r\n        \"id\": \"5ac8830e-0f20-4814-92eb-efae7d9a6813\"\r\n    },\r\n    {\r\n        \"question\": \"How do you perceive Maggi products??\",\r\n        \"answers\": [\r\n            {\r\n                \"option\": \"Good for health.\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Sauces\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Tasty / Fun eating\"\r\n              \r\n            },\r\n            {\r\n                \"option\": \"Junk food\"\r\n              \r\n            }\r\n        ],\r\n        \"id\": \"f43d19ae-b070-43ee-acc7-a3490992a09e\"\r\n    }\r\n]",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8c5ebcca-5aa3-4a13-a3b3-c13ec0804440",
+			"name": "/question/id",
+			"url": "http://localhost:8080/question/eee742a6-e335-40d6-8d47-43411495e65a",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "90c83421-3a54-4709-976b-baebe8cd0d1b",
+			"name": "/question/all",
+			"url": "http://localhost:8080/question/all",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"rawModeData": "[\r\n  {\r\n    \"question\": \"Are you aware of Maggi?\",\r\n    \"answers\": [\r\n      {\r\n        \"option\": \"Yes\"\r\n      },\r\n      {\r\n        \"option\": \"No\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"question\": \"which product of Maggi do you prefer most?\",\r\n    \"answers\": [\r\n      {\r\n        \"option\": \"Noodles\"\r\n      },\r\n      {\r\n        \"option\": \"Sauces\"\r\n      },\r\n      {\r\n        \"option\": \"Soups\"\r\n      },\r\n      {\r\n        \"option\": \"Pazzta\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"question\": \"Why do you prefer it?\",\r\n    \"answers\": [\r\n      {\r\n        \"option\": \"Flavours\"\r\n      },\r\n      {\r\n        \"option\": \"Price\"\r\n      },\r\n      {\r\n        \"option\": \"Taste\"\r\n      },\r\n      {\r\n        \"option\": \"Brand Image\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"question\": \"How do you perceive Maggi products??\",\r\n    \"answers\": [\r\n      {\r\n        \"option\": \"Good for health.\"\r\n      },\r\n      {\r\n        \"option\": \"Sauces\"\r\n      },\r\n      {\r\n        \"option\": \"Junk food\"\r\n      },\r\n      {\r\n        \"option\": \"Tasty / Fun eating\"\r\n      }\r\n    ]\r\n  }\r\n]",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c6c2e891-d400-4d90-a09d-04a712d776a6",
+			"name": "/question/id",
+			"url": "http://localhost:8080/question/ec5b6676-2725-4c5f-83eb-9cb2139dd4e2",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cc46de5b-4a37-40d9-8b2b-8bda4cd74a47",
+			"name": "/question/id/distribution",
+			"url": "http://localhost:8080/question/f43d19ae-b070-43ee-acc7-a3490992a09e/distribution",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d87f42b0-c7ee-4c8e-b036-9af1dd093c79",
+			"name": "/question",
+			"url": "http://localhost:8080/question",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "d104b810-0939-46d0-9409-7c1f63cabded",
+			"rawModeData": "{\n\"question\":\"What age group likes magii?\",\n\"answers\":[\n\t{\"option\":\"Kids\"},\n\t{\"option\":\"Teens\"},\n\t{\"option\":\"Adults\"},\n\t{\"option\":\"All\"}\n]\n}\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
